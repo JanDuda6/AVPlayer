@@ -12,7 +12,6 @@ import RxSwift
 import AVKit
 
 class HomeViewController: UIViewController {
-
     private let disposeBag = DisposeBag()
 
     let button: UIButton = {
@@ -33,7 +32,8 @@ class HomeViewController: UIViewController {
 
     private func goToPlayer() {
         let playerVC = PlayerViewController(videoURL: VideoURL.parkourVideo)
-        self.present(playerVC, animated: false)
+        playerVC.modalPresentationStyle = .fullScreen
+        self.present(playerVC, animated: true)
     }
 
     private func setUpButton() {

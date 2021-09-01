@@ -13,7 +13,8 @@ import RxSwift
 
 class PlayerViewController: UIViewController {
     private let videoURL: String
-    private let playerViewController = AVPlayerViewController()
+    private var player = AVPlayer()
+    private var playerLayer = AVPlayerLayer()
     private let disposeBag = DisposeBag()
 
     private let playPauseButton: UIButton = {
@@ -69,32 +70,36 @@ class PlayerViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        openPlayerController()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        preparePlayerLayout()
     }
 
-    private func openPlayerController() {
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.playerLayer.frame = self.view.layer.bounds
+    }
+
+    private func preparePlayerLayout() {
+        self.view.backgroundColor = .black
         guard let url = URL(string: videoURL) else { return }
-        let player = AVPlayer(url: url)
-        playerViewController.player = player
-        playerViewController.showsPlaybackControls = false
-        playerViewController.modalPresentationStyle = .overCurrentContext
-        self.present(playerViewController, animated: true) { [weak self] in
-            self?.setUpButtonsStackView()
-            self?.setUpButtonsGesture()
-            self?.setUpSliderConstraints()
-            self?.setUpSliderProgressBar()
-            self?.setUpSliderAction()
-            self?.setUpPlayerGesture()
-            self?.dismissWhenVideoEnds()
-        }
+        self.player = AVPlayer(url: url)
+        self.playerLayer = AVPlayerLayer(player: player)
+        self.view.layer.addSublayer(playerLayer)
+        setUpButtonsStackView()
+        setUpButtonsGesture()
+        setUpSliderConstraints()
+        setUpSliderProgressBar()
+        setUpSliderAction()
+        setUpPlayerGesture()
+        dismissWhenVideoEnds()
     }
 }
 
 //MARK: - SnapKit
 extension PlayerViewController {
     private func setUpButtonsStackView() {
-        playerViewController.view.addSubview(buttonsStackView)
+        self.view.addSubview(buttonsStackView)
         buttonsStackView.addArrangedSubview(backwardButton)
         buttonsStackView.addArrangedSubview(playPauseButton)
         buttonsStackView.addArrangedSubview(forwardButton)
@@ -104,11 +109,11 @@ extension PlayerViewController {
     }
 
     private func setUpSliderConstraints() {
-        playerViewController.view.addSubview(videoProgressSlider)
+        self.view.addSubview(videoProgressSlider)
         videoProgressSlider.snp.makeConstraints {
-            $0.leading.equalTo(playerViewController.view).offset(40)
-            $0.trailing.equalTo(playerViewController.view).offset(-40)
-            $0.bottom.equalTo(playerViewController.view).offset(-50)
+            $0.leading.equalTo(self.view).offset(40)
+            $0.trailing.equalTo(self.view).offset(-40)
+            $0.bottom.equalTo(self.view).offset(-50)
         }
     }
 }
@@ -116,7 +121,7 @@ extension PlayerViewController {
 //MARK: - RxGesture
 extension PlayerViewController {
     private func setUpPlayerGesture() {
-        playerViewController.view.rx.tapGesture()
+        self.view.rx.tapGesture()
             .when(.recognized)
             .subscribe(onNext:  { [weak self] _ in
                 self?.hideAndShowControlsOnTap()
@@ -161,13 +166,13 @@ extension PlayerViewController {
 //MARK: - Media Controls Features
 extension PlayerViewController {
     private func playPauseVideo() {
-        if playerViewController.player?.rate == 0 {
-            playerViewController.player?.play()
+        if self.player.rate == 0 {
+            self.player.play()
             let imageSize = UIImage.SymbolConfiguration(pointSize: 30, weight: .bold, scale: .large)
             let image = UIImage(systemName: "pause.fill", withConfiguration: imageSize)
             playPauseButton.setImage(image, for: .normal)
         } else {
-            playerViewController.player?.pause()
+            self.player.pause()
             let imageSize = UIImage.SymbolConfiguration(pointSize: 30, weight: .bold, scale: .large)
             let image = UIImage(systemName: "play.fill", withConfiguration: imageSize)
             playPauseButton.setImage(image, for: .normal)
@@ -176,24 +181,22 @@ extension PlayerViewController {
 
     private func buttonsVideoSeek(doForwardJump: Bool) {
         let interval = CMTimeMake(value: 30, timescale: 1)
-        guard let currentTime = playerViewController.player?.currentTime() else { return }
+        let currentTime = player.currentTime()
         let targetTime = doForwardJump ? CMTimeAdd(interval, currentTime) : CMTimeSubtract(currentTime, interval)
-        playerViewController.player?.seek(to: targetTime)
+        self.player.seek(to: targetTime)
     }
 
     private func sliderVideoSeek(newTime: Float) {
-        let player = playerViewController.player
         let newTimeInSeconds = Int64(newTime)
         let targetTime = CMTimeMake(value: newTimeInSeconds, timescale: 1)
-        player?.seek(to: targetTime)
+        player.seek(to: targetTime)
     }
 
     private func setUpSliderProgressBar() {
-        let player = playerViewController.player
         let interval = CMTimeMake(value: 1, timescale: 10)
-        player?.addPeriodicTimeObserver(forInterval: interval, queue: .main, using: { [weak self] progressTime in
-            if player?.currentItem?.status == .readyToPlay {
-                guard let duration = player?.currentItem?.duration.seconds else { return }
+        player.addPeriodicTimeObserver(forInterval: interval, queue: .main, using: { [weak self] progressTime in
+            if self?.player.currentItem?.status == .readyToPlay {
+                guard let duration = self?.player.currentItem?.duration.seconds else { return }
                 self?.videoProgressSlider.maximumValue = Float(duration)
                 let currentTime = CMTimeGetSeconds(progressTime)
                 self?.videoProgressSlider.value = Float(currentTime)
@@ -208,7 +211,6 @@ extension PlayerViewController {
         NotificationCenter.default.rx.notification(Notification.Name.AVPlayerItemDidPlayToEndTime)
             .asObservable()
             .subscribe(onNext: { [weak self] _ in
-                self?.playerViewController.dismiss(animated: true, completion: nil)
                 self?.dismiss(animated: true, completion: nil)
             }).disposed(by: disposeBag)
     }
