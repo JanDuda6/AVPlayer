@@ -3,16 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03E6F99B55C70950673FFE0B /* Pods_AVPlayerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5F366D693AE0503F61827E6 /* Pods_AVPlayerTests.framework */; };
+		136373B32BFE3F723D8522D0 /* Pods_AVPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA86AE5EC48EE0E3608747C5 /* Pods_AVPlayer.framework */; };
+		28A528C7E188A0667592BD56 /* Pods_AVPlayer_AVPlayerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65A1965627AF8DEEF5A4123 /* Pods_AVPlayer_AVPlayerUITests.framework */; };
 		C590246326DFAA33000A8227 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C590246226DFAA33000A8227 /* AppDelegate.swift */; };
 		C590246526DFAA33000A8227 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C590246426DFAA33000A8227 /* SceneDelegate.swift */; };
-		C590246726DFAA33000A8227 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C590246626DFAA33000A8227 /* ViewController.swift */; };
 		C590246A26DFAA33000A8227 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C590246826DFAA33000A8227 /* Main.storyboard */; };
 		C590246C26DFAA34000A8227 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C590246B26DFAA34000A8227 /* Assets.xcassets */; };
 		C590246F26DFAA34000A8227 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C590246D26DFAA34000A8227 /* LaunchScreen.storyboard */; };
+		C590249326DFAE40000A8227 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C590249226DFAE40000A8227 /* HomeViewController.swift */; };
+		C590249626DFAE49000A8227 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C590249426DFAE49000A8227 /* PlayerViewController.swift */; };
+		C590249726DFAE49000A8227 /* VideoURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C590249526DFAE49000A8227 /* VideoURL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,16 +38,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D2F87FFCA475A9E059087D2 /* Pods-AVPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVPlayer.debug.xcconfig"; path = "Target Support Files/Pods-AVPlayer/Pods-AVPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		3794F7CC33C97F99445E6B21 /* Pods-AVPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVPlayer.release.xcconfig"; path = "Target Support Files/Pods-AVPlayer/Pods-AVPlayer.release.xcconfig"; sourceTree = "<group>"; };
+		56BB9FF97E4A4B2B2C5A78CA /* Pods-AVPlayerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVPlayerTests.debug.xcconfig"; path = "Target Support Files/Pods-AVPlayerTests/Pods-AVPlayerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8364979A27AEA586B1BCF6CE /* Pods-AVPlayer-AVPlayerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVPlayer-AVPlayerUITests.debug.xcconfig"; path = "Target Support Files/Pods-AVPlayer-AVPlayerUITests/Pods-AVPlayer-AVPlayerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B5F366D693AE0503F61827E6 /* Pods_AVPlayerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AVPlayerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C590245F26DFAA33000A8227 /* AVPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C590246226DFAA33000A8227 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C590246426DFAA33000A8227 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C590246626DFAA33000A8227 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C590246926DFAA33000A8227 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C590246B26DFAA34000A8227 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C590246E26DFAA34000A8227 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C590247026DFAA34000A8227 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C590247526DFAA34000A8227 /* AVPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AVPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C590248026DFAA34000A8227 /* AVPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AVPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C590249226DFAE40000A8227 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C590249426DFAE49000A8227 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		C590249526DFAE49000A8227 /* VideoURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoURL.swift; sourceTree = "<group>"; };
+		D65A1965627AF8DEEF5A4123 /* Pods_AVPlayer_AVPlayerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AVPlayer_AVPlayerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E168C4329EC0242EDA63C529 /* Pods-AVPlayer-AVPlayerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVPlayer-AVPlayerUITests.release.xcconfig"; path = "Target Support Files/Pods-AVPlayer-AVPlayerUITests/Pods-AVPlayer-AVPlayerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E9FD3F94B55E05D7F1666D56 /* Pods-AVPlayerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AVPlayerTests.release.xcconfig"; path = "Target Support Files/Pods-AVPlayerTests/Pods-AVPlayerTests.release.xcconfig"; sourceTree = "<group>"; };
+		EA86AE5EC48EE0E3608747C5 /* Pods_AVPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AVPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				136373B32BFE3F723D8522D0 /* Pods_AVPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03E6F99B55C70950673FFE0B /* Pods_AVPlayerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28A528C7E188A0667592BD56 /* Pods_AVPlayer_AVPlayerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +94,8 @@
 			children = (
 				C590246126DFAA33000A8227 /* AVPlayer */,
 				C590246026DFAA33000A8227 /* Products */,
+				D3A808AED8211FC38232E2D3 /* Pods */,
+				DB7F99BB3AAE53A942BF2C37 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,13 +114,38 @@
 			children = (
 				C590246226DFAA33000A8227 /* AppDelegate.swift */,
 				C590246426DFAA33000A8227 /* SceneDelegate.swift */,
-				C590246626DFAA33000A8227 /* ViewController.swift */,
+				C590249226DFAE40000A8227 /* HomeViewController.swift */,
+				C590249426DFAE49000A8227 /* PlayerViewController.swift */,
+				C590249526DFAE49000A8227 /* VideoURL.swift */,
 				C590246826DFAA33000A8227 /* Main.storyboard */,
 				C590246B26DFAA34000A8227 /* Assets.xcassets */,
 				C590246D26DFAA34000A8227 /* LaunchScreen.storyboard */,
 				C590247026DFAA34000A8227 /* Info.plist */,
 			);
 			path = AVPlayer;
+			sourceTree = "<group>";
+		};
+		D3A808AED8211FC38232E2D3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D2F87FFCA475A9E059087D2 /* Pods-AVPlayer.debug.xcconfig */,
+				3794F7CC33C97F99445E6B21 /* Pods-AVPlayer.release.xcconfig */,
+				8364979A27AEA586B1BCF6CE /* Pods-AVPlayer-AVPlayerUITests.debug.xcconfig */,
+				E168C4329EC0242EDA63C529 /* Pods-AVPlayer-AVPlayerUITests.release.xcconfig */,
+				56BB9FF97E4A4B2B2C5A78CA /* Pods-AVPlayerTests.debug.xcconfig */,
+				E9FD3F94B55E05D7F1666D56 /* Pods-AVPlayerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DB7F99BB3AAE53A942BF2C37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA86AE5EC48EE0E3608747C5 /* Pods_AVPlayer.framework */,
+				D65A1965627AF8DEEF5A4123 /* Pods_AVPlayer_AVPlayerUITests.framework */,
+				B5F366D693AE0503F61827E6 /* Pods_AVPlayerTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -109,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C590248926DFAA34000A8227 /* Build configuration list for PBXNativeTarget "AVPlayer" */;
 			buildPhases = (
+				F4F0BE6CFB614EBDCE4C81B1 /* [CP] Check Pods Manifest.lock */,
 				C590245B26DFAA33000A8227 /* Sources */,
 				C590245C26DFAA33000A8227 /* Frameworks */,
 				C590245D26DFAA33000A8227 /* Resources */,
+				B19020DF2F02D70ADC3BDF45 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +174,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C590248C26DFAA34000A8227 /* Build configuration list for PBXNativeTarget "AVPlayerTests" */;
 			buildPhases = (
+				B19C4AB7E47D3FB8FB5BADC0 /* [CP] Check Pods Manifest.lock */,
 				C590247126DFAA34000A8227 /* Sources */,
 				C590247226DFAA34000A8227 /* Frameworks */,
 				C590247326DFAA34000A8227 /* Resources */,
@@ -144,9 +193,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C590248F26DFAA34000A8227 /* Build configuration list for PBXNativeTarget "AVPlayerUITests" */;
 			buildPhases = (
+				170019D8E7C3A92B535A4CDC /* [CP] Check Pods Manifest.lock */,
 				C590247C26DFAA34000A8227 /* Sources */,
 				C590247D26DFAA34000A8227 /* Frameworks */,
 				C590247E26DFAA34000A8227 /* Resources */,
+				4FF7D3D78E595B864456086F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -227,14 +278,119 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		170019D8E7C3A92B535A4CDC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AVPlayer-AVPlayerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4FF7D3D78E595B864456086F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AVPlayer-AVPlayerUITests/Pods-AVPlayer-AVPlayerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AVPlayer-AVPlayerUITests/Pods-AVPlayer-AVPlayerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AVPlayer-AVPlayerUITests/Pods-AVPlayer-AVPlayerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B19020DF2F02D70ADC3BDF45 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AVPlayer/Pods-AVPlayer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AVPlayer/Pods-AVPlayer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AVPlayer/Pods-AVPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B19C4AB7E47D3FB8FB5BADC0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AVPlayerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4F0BE6CFB614EBDCE4C81B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AVPlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C590245B26DFAA33000A8227 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C590246726DFAA33000A8227 /* ViewController.swift in Sources */,
 				C590246326DFAA33000A8227 /* AppDelegate.swift in Sources */,
+				C590249626DFAE49000A8227 /* PlayerViewController.swift in Sources */,
+				C590249726DFAE49000A8227 /* VideoURL.swift in Sources */,
 				C590246526DFAA33000A8227 /* SceneDelegate.swift in Sources */,
+				C590249326DFAE40000A8227 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +561,7 @@
 		};
 		C590248A26DFAA34000A8227 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D2F87FFCA475A9E059087D2 /* Pods-AVPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -424,6 +581,7 @@
 		};
 		C590248B26DFAA34000A8227 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3794F7CC33C97F99445E6B21 /* Pods-AVPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -443,6 +601,7 @@
 		};
 		C590248D26DFAA34000A8227 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56BB9FF97E4A4B2B2C5A78CA /* Pods-AVPlayerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -465,6 +624,7 @@
 		};
 		C590248E26DFAA34000A8227 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9FD3F94B55E05D7F1666D56 /* Pods-AVPlayerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +647,7 @@
 		};
 		C590249026DFAA34000A8227 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8364979A27AEA586B1BCF6CE /* Pods-AVPlayer-AVPlayerUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -507,6 +668,7 @@
 		};
 		C590249126DFAA34000A8227 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E168C4329EC0242EDA63C529 /* Pods-AVPlayer-AVPlayerUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
